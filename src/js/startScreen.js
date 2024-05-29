@@ -29,13 +29,8 @@ export class StartScreen extends Scene {
 
     const starScene = new Level();
     this.engine.add("starScene", starScene);
-
-    // Add a button to start the game
-
-    // Add the button to the scene
   }
   onPreUpdate(engine) {
-    // Add a click event listener to the button
     if (engine.input.keyboard.wasPressed(Keys.Enter)) {
       this.engine.goToScene("level");
     }

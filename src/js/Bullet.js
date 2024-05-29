@@ -25,6 +25,7 @@ export class Bullet extends Actor {
       event.other.kill();
       // @ts-ignore
       this.scene?.addPoints(100);
+      this.kill();
     }
   }
   hitPlayer(event) {

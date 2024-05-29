@@ -100,8 +100,6 @@ export class Plane extends Actor {
 
     this.vel = new Vector(xspeed, yspeed);
 
-    //Make an statment saying how many shots you have left
-    //Stop shooting when out of bullets
     if (engine.input.keyboard.wasPressed(Keys.Space)) {
       console.log("shoot!");
       const bullet = new Bullet(0.1, 0.1, -2000);
