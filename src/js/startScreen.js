@@ -14,6 +14,7 @@ import { Resources, ResourceLoader } from "./resources.js";
 import { Game } from "./game.js";
 import { EndGame } from "./endOfGame.js";
 import { StartBackground } from "./startBackground.js";
+import { Level } from "./level.js";
 
 export class StartScreen extends Scene {
   constructor() {
@@ -25,34 +26,18 @@ export class StartScreen extends Scene {
 
     const land = new StartBackground();
     this.add(land);
-    // Add a button to start the game
-  }
-  onPreUpdate(engine) {
-    const startButton = new Actor({
-      pos: new Vector(200, 400),
-      width: 200,
-      height: 50,
-      color: Color.Red,
-      // @ts-ignore
-      text: "Start Button",
-      collisionType: CollisionType.Active,
-    });
 
-    // Add a click event listener to the button
-    if (
-      engine.input.keyboard.isHeld(Keys.S) ||
-      engine.input.keyboard.isHeld(Keys.Down)
-    ) {
-      console.log("kaas");
-    }
-    startButton.on("click", () => {
-      this.clickedButton();
-    });
+    const starScene = new Level();
+    this.engine.add("starScene", starScene);
+
+    // Add a button to start the game
 
     // Add the button to the scene
-    this.add(startButton);
   }
-  clickedButton() {
-    console.log("kut ding");
+  onPreUpdate(engine) {
+    // Add a click event listener to the button
+    if (engine.input.keyboard.wasPressed(Keys.Enter)) {
+      this.engine.goToScene("level");
+    }
   }
 }

@@ -11,6 +11,7 @@ import {
 } from "excalibur";
 import { Resources, ResourceLoader } from "./resources.js";
 import { Game } from "./game.js";
+import { EndGame } from "./endOfGame.js";
 
 export class UI extends ScreenElement {
   healthbar;
@@ -48,14 +49,22 @@ export class UI extends ScreenElement {
       }),
     });
     this.addChild(this.scoreText);
+
+    const newScene = new EndGame();
+    // @ts-ignore
+    this.currentscene?.add("endgame", newScene);
   }
 
   reduceHealth(hp, playerHp) {
     this.healthbar.scale = new Vector(hp / playerHp, 1);
   }
+
   updateScore(score) {
     this.score += score;
     this.scoreText.text = `Score: ${this.score}`;
     console.log(this.score);
+    if (this.score >= 1000) {
+      this._engine.goToScene("endgame");
+    }
   }
 }

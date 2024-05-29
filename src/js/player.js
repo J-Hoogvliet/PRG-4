@@ -41,7 +41,7 @@ export class Plane extends Actor {
       this.hp -= amount;
       console.log(this.hp);
       // @ts-ignore
-      this.scene?.engine.healthCare(this.hp, 5);
+      this.scene?.healthCare(this.hp);
       this.isImune = true;
       this.afterburner?.actions.blink(40, 40, 25);
       this.actions.blink(40, 40, 25).callMethod(() => {
