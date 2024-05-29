@@ -24,6 +24,7 @@ const Resources = {
   JetStream: new ImageSource("images/pixil-frame-0.png"),
   JetBackStream: new ImageSource("images/Backwards-burner.png"),
   NewFont: new FontSource("fonts/Starjedi.ttf", "Starjedi"),
+  EndBackground: new ImageSource("images/Frame 3.png"),
 };
 const ResourceLoader = new Loader([
   Resources.Plane,
@@ -35,6 +36,7 @@ const ResourceLoader = new Loader([
   Resources.JetStream,
   Resources.JetBackStream,
   Resources.NewFont,
+  Resources.EndBackground,
 ]);
 
 export { Resources, ResourceLoader };

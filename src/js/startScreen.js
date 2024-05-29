@@ -22,8 +22,6 @@ export class StartScreen extends Scene {
   }
 
   onInitialize(engine) {
-    // Initialize start screen-specific assets or actors here
-
     const land = new StartBackground();
     this.add(land);
 

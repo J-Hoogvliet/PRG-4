@@ -9,9 +9,11 @@ import {
   Vector,
 } from "excalibur";
 import { Resources, ResourceLoader } from "./resources.js";
+import { EndBackground } from "./endGameBackground.js";
 
 export class EndGame extends Scene {
   onActivate(engine) {
-    console.log("kutSpel");
+    const land = new EndBackground();
+    this.add(land);
   }
 }
