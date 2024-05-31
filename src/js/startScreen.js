@@ -15,6 +15,7 @@ import { Game } from "./game.js";
 import { EndGame } from "./endOfGame.js";
 import { StartBackground } from "./startBackground.js";
 import { Level } from "./level.js";
+import { startUI } from "./startUI.js";
 
 export class StartScreen extends Scene {
   constructor() {
@@ -25,18 +26,11 @@ export class StartScreen extends Scene {
     const land = new StartBackground();
     this.add(land);
 
+    const starUI = new startUI();
+    this.add(starUI);
+
     const starScene = new Level();
     this.engine.add("starScene", starScene);
-
-    const text = new engine.Text({
-      text: "Press Enter",
-      font: new engine.Font({
-        family: "Arial",
-        size: 24,
-        color: Color.White,
-      }),
-    });
-    this.add(text);
   }
   onPreUpdate(engine) {
     if (engine.input.keyboard.wasPressed(Keys.Enter)) {
