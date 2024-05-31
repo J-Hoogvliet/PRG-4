@@ -15,7 +15,7 @@ export class EndGame extends Scene {
   constructor() {
     super();
   }
-  onActivate(engine) {
+  onInitialize(engine) {
     const land = new EndBackground();
     this.add(land);
   }
