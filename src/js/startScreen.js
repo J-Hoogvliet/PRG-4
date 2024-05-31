@@ -27,6 +27,16 @@ export class StartScreen extends Scene {
 
     const starScene = new Level();
     this.engine.add("starScene", starScene);
+
+    const text = new engine.Text({
+      text: "Press Enter",
+      font: new engine.Font({
+        family: "Arial",
+        size: 24,
+        color: Color.White,
+      }),
+    });
+    this.add(text);
   }
   onPreUpdate(engine) {
     if (engine.input.keyboard.wasPressed(Keys.Enter)) {
