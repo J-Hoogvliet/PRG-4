@@ -16,6 +16,6 @@ export class EndBackground extends Actor {
     });
     this.anchor = Vector.Zero;
     this.graphics.use(this.sprite);
-    this.scale = new Vector(1440 / 900, 900 / 440);
+    this.scale = new Vector(1, 1);
   }
 }
