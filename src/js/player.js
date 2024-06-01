@@ -53,14 +53,6 @@ export class Plane extends Actor {
     }
   }
 
-  logSpeed() {
-    console.log(`Mijn snelheid is ${this.vel.x}`);
-  }
-
-  logPosition() {
-    console.log(`Mijn positie is ${this.pos.x}, ${this.pos.y}`);
-  }
-
   onPostUpdate(engine) {
     this.rotation = 0;
     let xspeed = 0;
