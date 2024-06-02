@@ -2,6 +2,7 @@ import { Actor, CollisionType, Color, Engine, Keys, Vector } from "excalibur";
 import { Resources, ResourceLoader } from "./resources.js";
 import { Bullet } from "./Bullet.js";
 import { Enemy } from "./opponent.js";
+import { Afterburner } from "./afterburner.js";
 
 export class Plane extends Actor {
   constructor(x, y) {
@@ -23,10 +24,7 @@ export class Plane extends Actor {
     this.scale = new Vector(0.15, 0.15);
     this.on("collisionstart", (event) => this.hitSomething(event));
 
-    this.afterburner = new Actor();
-    this.afterburner.graphics.use(Resources.JetStream.toSprite());
-    this.afterburner.pos = new Vector(10, 430);
-    this.afterburner.scale = new Vector(10, 20);
+    this.afterburner = new Afterburner();
     this.addChild(this.afterburner);
   }
 
